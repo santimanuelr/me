@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://santimanuelr.github.io/me/sitemap.xml
