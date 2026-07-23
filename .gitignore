@@ -1,4 +1,19 @@
-_site
-.sass-cache
-Gemfile.lock
-*.gem
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+*.local
+.env
+.env.*
+!.env.example

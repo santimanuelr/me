@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Santi Rodríguez — Fullstack Software Developer</title>
+    <meta
+      name="description"
+      content="Fullstack Java and JavaScript developer with 7+ years of experience in microservices, Angular and React."
+    />
+    <meta name="author" content="Santiago Manuel Rodríguez" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Santi Rodríguez — Fullstack Software Developer" />
+    <meta
+      property="og:description"
+      content="Fullstack Java and JavaScript developer with 7+ years of experience in microservices, Angular and React."
+    />
+    <meta property="og:url" content="https://santimanuelr.github.io/" />
+    <meta name="twitter:card" content="summary" />
+
+    <meta name="theme-color" content="#fbf7eb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Set theme before paint to avoid a flash of the wrong color scheme -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          var dark = stored ? stored === 'dark' : systemDark
+          if (dark) document.documentElement.classList.add('dark')
+        } catch (e) {}
+      })()
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KV81561R24"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-KV81561R24')
+    </script>
+  </head>
+  <body class="min-h-screen bg-bg text-text antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
