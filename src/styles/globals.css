@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/* Dark mode driven by a `.dark` class on <html> (set by next-themes). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Semantic color tokens — "ink on paper" (light) / warm dark (dark). */
+:root {
+  --bg: #fbf7eb;
+  --bg-subtle: #efe9d8;
+  --text: #141414;
+  --text-muted: #525252;
+  --text-faint: #8a8378;
+  --border: #9e9e9e;
+  --accent: #141414;
+}
+
+.dark {
+  --bg: #141210;
+  --bg-subtle: #201d17;
+  --text: #ece7d8;
+  --text-muted: #a8a29a;
+  --text-faint: #6f6a60;
+  --border: #3a352c;
+  --accent: #ece7d8;
+}
+
+/* Map the tokens into Tailwind's theme so `bg-bg`, `text-muted`, etc. work. */
+@theme {
+  --font-sans: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.15;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 600;
+
+  --text-headline: 1.5rem;
+  --text-headline--line-height: 1.3;
+  --text-headline--letter-spacing: -0.01em;
+  --text-headline--font-weight: 600;
+
+  --text-article: 1.0625rem;
+  --text-article--line-height: 1.8;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+@layer utilities {
+  .site-container {
+    @apply mx-auto max-w-3xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .theme-transition {
+    @apply transition-colors duration-200;
+  }
+}
+
+.prose {
+  @apply text-text;
+}
+
+.prose a {
+  @apply text-accent underline underline-offset-4;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  @apply text-text;
+}
